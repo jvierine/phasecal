@@ -2,6 +2,8 @@
 
 This software package allows a relative cable delay to be measured with an accuracy of ~ 1 picosecond by tracking the phase of an upgoing 5 MHz signal and a downgoing 5 MHz + 1 kHz signal. The software requires a custom FPGA image for the USRP N200, which simply streams dual channel decimated raw 100 MHz ADC samples. 
 
+The FPGA code is probably useful for anyone that wants simple raw decimated samples out of a USRP N200. The double precision downconversion gnuradio signal processing block is probably also useful for anyone that needs very accurate downconversion. Other than that, the rest is highly specific for the VLBI hardware developed at MIT Haystack. 
+
 Hardware
 --------
 
