@@ -22,6 +22,7 @@ You need Digital RF, a hdf5 based timestamped RF write library developed at Hays
 
 You need gnuradio 3.7.6, and you need the out-of-tree module gr-drf. gr-drf contains a double precision digital downconverter that allows converting 5 MHz and 5 MHz + 1 kHz into baseband using sufficient precision to allow phase tracking with sub picosecond accuracy. The code is in dddc_impl.cc and it is written in C++ to ensure sufficient performance. Dropped packets are padded with zeros to keep time aligned. 
 
+```
 > cd gr-drf
 > mkdir build
 > cd build
@@ -29,16 +30,20 @@ You need gnuradio 3.7.6, and you need the out-of-tree module gr-drf. gr-drf cont
 > make
 > sudo make install
 > sudo ldconfig
+```
 
 There is a recording script that can be run as a service to record phase of 5 MHz and 5 MHz + 1 kHz. The output goes into /data/phasecal. This directory needs to be user writeable. The data increases with about 100 MB/hour with the 100 Hz resolution. Old hourly directories can be deleted from the system while everything is running. The first 10 seconds of data are garbage, because this is used to determine DC offset. 
 
 Starting the recorder:
+```
 > ./pcal_rec.py
+```
 
 A restart of the recorder will disrupt the continuity of the phase calibration due to resetting of the numerical oscillator. 
 
 For outputting the cable delay as picoseconds, there is a command line tool that has several options summarized in the help.
 
+```
 > ./pcal_get_delay.py -i 100 -n --help
 Usage: pcal_get_delay.py [options]
 
@@ -56,6 +61,7 @@ Options:
   -o, --overview_plot   plot sparse overview plot
   -a, --ascii_out       output delays in ascii
   -n, --latest          Latest recorded delay
+```
 
 This tool requires three basic inputs: 
 1) what timestamp is used to determine the reference phase (and cable delay)
@@ -64,8 +70,9 @@ This tool requires three basic inputs:
 
 For example, to output in ascii form the cable delay between unix second 1448903561 and 1448903571, with 1 second integration (100 Hz sample rate, integrate 100 samples), with the cable delay at unix second 1448903561 used as reference. The timestamp refers to the leading edge of the 1 second averaging window:
 
-> ./pcal_get_delay.py -i 100 -b 1448903561 -0  1448903561 -1 1448903571 -a
 ```
+./pcal_get_delay.py -i 100 -b 1448903561 -0  1448903561 -1 1448903571 -a
+
 # pcal out
 # reference delay at 1448903561.00 (unix seconds), ref: 82761.43 (ps)
 # integration 1.00 (seconds)
@@ -84,16 +91,20 @@ For example, to output in ascii form the cable delay between unix second 1448903
 
 A quick way to plot the last data recorded is to use -n. It is still advisable to supply a reference time each call is compared with a delay measured at the same time. 
 
+```
 > ./pcal_get_delay.py -n -b 1448903561
 t0 1448904194.000 t1 1448904195.000 delay 3.271 reference time 1448903561.00
+```
 
 Values can also be plotted:
+```
 > ./pcal_get_delay.py -i 100 -b 1448903561 -0  1448903561 -1 1448903671 -p
+```
 
 Finally, there is a mode to sparsely go over a large amount of data (hard coded to 300 points evenly spread between t0 and t1). If one wants to enable to sparse mode, use the -o flag. This would e.g., plot 24 hours of data using 300 measurement points and 10 s resolution, plotting the result:
-
+```
 > ./pcal_get_delay.py -i 1000 -b 1448903561 -0  1448817161 -1 1448903621 -p -o
-
+```
 Warning: by default, the script will use now-60 seconds to determing reference time delay. This is not what you want in any operational measurement. 
 
 Other
