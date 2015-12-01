@@ -39,7 +39,7 @@ A restart of the recorder will disrupt the continuity of the phase calibration d
 
 For outputting the cable delay as picoseconds, there is a command line tool that has several options summarized in the help.
 
-./pcal_get_delay.py -i 100 -n --help
+> ./pcal_get_delay.py -i 100 -n --help
 Usage: pcal_get_delay.py [options]
 
 Options:
@@ -64,7 +64,7 @@ This tool requires three basic inputs:
 
 For example, to output in ascii form the cable delay between unix second 1448903561 and 1448903571, with 1 second integration (100 Hz sample rate, integrate 100 samples), with the cable delay at unix second 1448903561 used as reference. The timestamp refers to the leading edge of the 1 second averaging window:
 
-./pcal_get_delay.py -i 100 -b 1448903561 -0  1448903561 -1 1448903571 -a
+> ./pcal_get_delay.py -i 100 -b 1448903561 -0  1448903561 -1 1448903571 -a
 # pcal out
 # reference delay at 1448903561.00 (unix seconds), ref: 82761.43 (ps)
 # integration 1.00 (seconds)
@@ -86,7 +86,7 @@ A quick way to plot the last data recorded is to use -n. It is still advisable t
 t0 1448904194.000 t1 1448904195.000 delay 3.271 reference time 1448903561.00
 
 Values can also be plotted:
-./pcal_get_delay.py -i 100 -b 1448903561 -0  1448903561 -1 1448903671 -p
+> ./pcal_get_delay.py -i 100 -b 1448903561 -0  1448903561 -1 1448903671 -p
 
 Finally, there is a mode to sparsely go over a large amount of data (hard coded to 300 points evenly spread between t0 and t1). If one wants to enable to sparse mode, use the -o flag. This would e.g., plot 24 hours of data using 300 measurement points and 10 s resolution, plotting the result:
 
