@@ -115,3 +115,8 @@ Other
 -----
 
 The system is sensitive to temperature changes in cables and purity of the clock driving the system. When things are working correctly, ~ 1 picosecond stability is achieved. 
+
+To verify that there are signals on both input channels, there is a gnuradio companion scope plot that can be used. You should see two sinusoidal signals, one at 5 MHz, and the other at 5 MHz + 1 kHz. 
+```
+> gnuradio_companion debug_signal_levels.grc
+```
