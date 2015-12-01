@@ -1,0 +1,4 @@
+include source/digital_rf.h
+include documents/Digital_RF.pdf
+include testing/test_digital_rf_hdf5.py
+include testing/metadata@1400792174.00*.h5

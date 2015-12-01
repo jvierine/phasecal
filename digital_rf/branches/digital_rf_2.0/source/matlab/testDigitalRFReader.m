@@ -1,0 +1,26 @@
+% example usage of DigitalRFReader.m
+% $Id: testDigitalRFReader.m 792 2015-07-07 17:43:47Z brideout $
+top_level_directories = char('/tmp/hdf5', '/tmp/hdf52');
+reader = DigitalRFReader(top_level_directories);
+disp(reader.get_channels());
+reader2 = DigitalRFReader('/tmp/hdf5');
+disp(reader2.get_channels());
+disp(reader2.get_samples_per_file('junk0'));
+disp(reader2.get_is_complex('junk0'));
+disp(reader2.get_num_subchannels('junk0'));
+[lower_sample, upper_sample] = reader2.get_bounds('junk4.1');
+disp([lower_sample, upper_sample]);
+gap_arr = reader.get_gap_array('junk4.1', 139436843450, 139436843550);
+disp(gap_arr);
+cont_arr = reader.get_continuous_array('junk4.1', 139436843459, 139436843555);
+disp(cont_arr);
+disp(reader.get_gap_array('junk4.1', 139436843456, 139436843465));
+data = reader.read_vector('junk4.1', 139436843456, 10);
+disp(size(data));
+disp(data);
+[lower_sample, upper_sample] = reader.get_bounds('junk1.2');
+disp([lower_sample, upper_sample]);
+disp(reader.get_continuous_array('junk1.2', lower_sample, upper_sample));
+data = reader.read_vector('junk1.2', lower_sample, 5000);
+disp(size(data));
+disp(data(1:4,:));

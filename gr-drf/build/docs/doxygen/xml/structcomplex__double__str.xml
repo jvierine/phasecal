@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="structcomplex__double__str" kind="struct" prot="public">
+    <compoundname>complex_double_str</compoundname>
+    <includes refid="dddc__impl_8h" local="no">dddc_impl.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structcomplex__double__str_1a2039af2dc0450cd29c429bcf71c90b14" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double complex_double_str::re</definition>
+        <argsstring></argsstring>
+        <name>re</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/oper/src/phasecal_dist/gr-drf/lib/dddc_impl.h" line="34" column="1" bodyfile="/home/oper/src/phasecal_dist/gr-drf/lib/dddc_impl.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structcomplex__double__str_1a224a28244a9dd031ab64a2256e45f885" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double complex_double_str::im</definition>
+        <argsstring></argsstring>
+        <name>im</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/oper/src/phasecal_dist/gr-drf/lib/dddc_impl.h" line="35" column="1" bodyfile="/home/oper/src/phasecal_dist/gr-drf/lib/dddc_impl.h" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/oper/src/phasecal_dist/gr-drf/lib/dddc_impl.h" line="33" column="1" bodyfile="/home/oper/src/phasecal_dist/gr-drf/lib/dddc_impl.h" bodystart="32" bodyend="36"/>
+    <listofallmembers>
+      <member refid="structcomplex__double__str_1a224a28244a9dd031ab64a2256e45f885" prot="public" virt="non-virtual"><scope>complex_double_str</scope><name>im</name></member>
+      <member refid="structcomplex__double__str_1a2039af2dc0450cd29c429bcf71c90b14" prot="public" virt="non-virtual"><scope>complex_double_str</scope><name>re</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

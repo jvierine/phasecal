@@ -1,0 +1,45 @@
+Digital RF HDF5 C and Python libraries
+
+$Id: README 444 2014-05-27 18:04:13Z brideout $
+
+
+Bill Rideout (brideout@haystack.mit.edu)
+
+OVERVIEW
+
+This library allows the writing and reading of RF data in an Hdf5 standard format.  It is designed for RF
+data archive, and to allow rapid random access.  Written by Bill Rideout (brideout@haystack.mit.edu), in 
+collaboration with Juha Vierinan (x@haystack.mit.edu) and Frank Lind (flind@haystack.mit.edu)
+
+See documents/Digital_RF.pdf for details
+
+PREREQUISTES
+
+The Hdf5 library (1.8 or greater) is required before installation.  See http://www.hdfgroup.org/HDF5/
+for more information.
+
+
+C INSTALLATION
+
+
+Do the normal ./configure, make, make install procedure.  Run "make check" to compile the test programs
+test_rf_write_hdf5 and benchmark_rf_write_hdf5 in the testing directory, where you should be able to simply
+run them without arguments. They will create test files in /tmp/hdf5*.  To clean up, run:
+
+rm -r /tmp/hdf5*
+
+
+PYTHON INSTALLATION
+
+
+Do the normal 
+
+python setup.py install
+
+to install.  For test, cd testing (must be run from this directory) and run 
+
+python test_digital_rf.hdf5.py
+
+This will create test files in /tmp/hdf5*.  To clean up, run:
+
+rm -r /tmp/hdf5*

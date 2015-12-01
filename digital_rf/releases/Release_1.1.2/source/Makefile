@@ -1,0 +1,21 @@
+# simple example Makefile for rf_write_hdf5 C code
+#
+# $Id: Makefile 412 2014-05-27 13:45:30Z brideout $
+all: test_rf_write_hdf5 benchmark_rf_write_hdf5 libdigital_rf.a
+
+CFLAGS=-fPIC -I.
+
+test_rf_write_hdf5: ../testing/test_rf_write_hdf5.o rf_write_hdf5.o
+	gcc -Wall $(CFLAGS) -I. -I/usr/local/include -o ../testing/test_rf_write_hdf5 -g rf_write_hdf5.c ../testing/test_rf_write_hdf5.c -lhdf5 -lm
+
+libdigital_rf.a: rf_write_hdf5.o 
+	gcc -Wall $(CFLAGS) -I. -I/usr/local/include -c rf_write_hdf5.c -lhdf5 -lm
+	rm -rf $@ 
+	ar cq $@ rf_write_hdf5.o 
+
+benchmark_rf_write_hdf5: ../testing/benchmark_rf_write_hdf5.o rf_write_hdf5.o
+	gcc -Wall $(CFLAGS) -I. -I/usr/local/include -o ../testing/benchmark_rf_write_hdf5 -g rf_write_hdf5.c ../testing/benchmark_rf_write_hdf5.c -lhdf5 -lm
+
+install: libdigital_rf.a
+	cp libdigital_rf.a /usr/lib/
+	cp digital_rf.h /usr/include/digital_rf.h

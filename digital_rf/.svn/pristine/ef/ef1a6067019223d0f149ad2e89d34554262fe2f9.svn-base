@@ -1,0 +1,24 @@
+<INSTALL FILE TEMPLATE - Replace With Project Name Here>
+
+$Id: INSTALL 5392 2010-11-30 16:58:59Z flind $
+
+Bill Rideout (brideout@haystack.mit.edu)
+
+MIT Haystack Observatory
+
+INTRODUCTION
+
+This library allows the writing and reading of RF data in an Hdf5 standard format.  It is designed for RF
+data archive, and to allow rapid random access.  Written by Bill Rideout (brideout@haystack.mit.edu), in 
+collaboration with Juha Vierinan (x@haystack.mit.edu) and Frank Lind (flind@haystack.mit.edu)
+
+See documents/Digital_RF.pdf for details
+
+QUICK INSTALLATION
+
+Do the normal ./configure, make, make install procedure.  Run "make check" to compile the test programs
+test_rf_write_hdf5 and benchmark_rf_write_hdf5 in the testing directory, where you should be able to simply
+run them without arguments. They will create test files in /tmp/hdf5*.  To clean up, run:
+
+rm -r /tmp/hdf5*
+
