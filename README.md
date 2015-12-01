@@ -14,11 +14,13 @@ Software
 
 You need Digital RF, a hdf5 based timestamped RF write library developed at Haystack. This depends on libhdf5-dev
 
+```
 > cd digital_rf/trunk
 > ./configure 
 > make 
 > sudo make install
 > sudo python setup.py install
+```
 
 You need gnuradio 3.7.6, and you need the out-of-tree module gr-drf. gr-drf contains a double precision digital downconverter that allows converting 5 MHz and 5 MHz + 1 kHz into baseband using sufficient precision to allow phase tracking with sub picosecond accuracy. The code is in dddc_impl.cc and it is written in C++ to ensure sufficient performance. Dropped packets are padded with zeros to keep time aligned. 
 
