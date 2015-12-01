@@ -1,5 +1,7 @@
 # phasecal 
 
+This software package allows a relative cable delay to be measured with an accuracy of ~ 1 picosecond by tracking the phase of an upgoing 5 MHz signal and a downgoing 5 MHz + 1 kHz signal. The software requires a custom FPGA image for the USRP N200, which simply streams dual channel decimated raw 100 MHz ADC samples. 
+
 Hardware
 --------
 
