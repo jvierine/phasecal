@@ -65,10 +65,10 @@ This tool requires three basic inputs:
 For example, to output in ascii form the cable delay between unix second 1448903561 and 1448903571, with 1 second integration (100 Hz sample rate, integrate 100 samples), with the cable delay at unix second 1448903561 used as reference. The timestamp refers to the leading edge of the 1 second averaging window:
 
 > ./pcal_get_delay.py -i 100 -b 1448903561 -0  1448903561 -1 1448903571 -a
-# pcal out
-# reference delay at 1448903561.00 (unix seconds), ref: 82761.43 (ps)
-# integration 1.00 (seconds)
-# time (unix seconds), delay (ps)
+\# pcal out
+\# reference delay at 1448903561.00 (unix seconds), ref: 82761.43 (ps)
+\# integration 1.00 (seconds)
+\# time (unix seconds), delay (ps)
 1448903561.00 0.00
 1448903562.00 -0.27
 1448903563.00 1.88
